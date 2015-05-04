@@ -3,6 +3,9 @@
 
 echo "-----> Executing installation defined in .Buildfile"
 
+BUILD_DIR=$1
+
+cd $BUILD_DIR
 ls -la
 
 source .Buildfile
