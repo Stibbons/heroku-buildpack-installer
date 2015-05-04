@@ -12,6 +12,7 @@ echo "-----> Build dir: $BUILD_DIR"
 echo "-----> Buildfile content:"
 cat .Buildfile
 echo "-----> PATH=$PATH"
-echo "-----> PYTHON_PATH=$PYTHON_PATH"
+echo "-----> PYTHONPATH=PYTHONPATH"
+echo "-----> PYTHONHOME=PYTHONHOME"
 echo "-----> Executing..."
 source .Buildfile
