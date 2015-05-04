@@ -1,6 +1,8 @@
-# Heroku Buildpack: Installer
+Heroku Buildpack: Installer
+===========================
 
-## Usage
+Usage
+----
 
 Define the build process in a file name .Buildfile in your project root::
 
