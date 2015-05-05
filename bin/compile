@@ -1,18 +1,33 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
+set -x
+
 echo "-----> Executing installation defined in .Buildfile"
 
 BUILD_DIR=$1
-
-cd $BUILD_DIR
-ls -la
-
 echo "-----> Build dir: $BUILD_DIR"
+cd $BUILD_DIR
+
+if [[ -d .profile.d ]]; then
+    FILES=.profile.d/*
+    echo "-----> Sourcing .profile.d"
+    for f in $FILES
+    do
+        if [[ -f $f ]]; then
+            echo "-----> Content of file to source $f..."
+            cat $f
+            echo "-----> Sourcing $f..."
+            source $f
+        fi
+    done
+fi
+
 echo "-----> Buildfile content:"
 cat .Buildfile
 echo "-----> PATH=$PATH"
 echo "-----> PYTHONPATH=$PYTHONPATH"
 echo "-----> PYTHONHOME=$PYTHONHOME"
-echo "-----> Executing..."
+
+echo "-----> Executing installation defined in .Buildfile"
 source .Buildfile
