@@ -9,9 +9,9 @@ BUILD_DIR=$1
 echo "-----> Build dir: $BUILD_DIR"
 cd $BUILD_DIR
 
-if [[ -d .profile.d ]]; then
-    FILES=.profile.d/*
-    echo "-----> Sourcing .profile.d"
+if [[ -d .export.d ]]; then
+    FILES=.export.d/*
+    echo "-----> Sourcing .export.d"
     for f in $FILES
     do
         if [[ -f $f ]]; then
