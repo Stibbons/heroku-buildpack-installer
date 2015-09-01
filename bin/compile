@@ -25,9 +25,17 @@ fi
 
 echo "-----> Buildfile content:"
 cat .Buildfile
+echo "-----> PWD=$PWD"
 echo "-----> PATH=$PATH"
 echo "-----> PYTHONPATH=$PYTHONPATH"
 echo "-----> PYTHONHOME=$PYTHONHOME"
+echo "-----> ls"
+ls
+echo "-----> ls .heroku"
+ls .heroku
+echo "-----> ls .heroku/python"
+ls .heroku/python
+
 
 echo "-----> Executing installation defined in .Buildfile"
 source .Buildfile
